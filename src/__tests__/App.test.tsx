@@ -1,0 +1,3 @@
+import '@testing-library/jest-dom/vitest';import {render,screen,fireEvent} from '@testing-library/react';import {beforeEach,describe,expect,it,vi} from 'vitest';import App from '../App';
+beforeEach(()=>localStorage.clear());
+describe('Todo app',()=>{it('shows empty state',()=>{render(<App/>);expect(screen.getByText(/No tasks yet/i)).toBeInTheDocument()});it('adds a task',()=>{vi.spyOn(window,'prompt').mockReturnValue('Prepare interview');render(<App/>);fireEvent.click(screen.getByText(/Add a new task/i));expect(screen.getAllByText('Prepare interview').length).toBeGreaterThan(0);expect(localStorage.getItem('todo.items.v1')).toContain('Prepare interview')});});

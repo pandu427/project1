@@ -1,0 +1,1 @@
+export function Sidebar(){return <aside className="sidebar"><h3>Menu</h3><input aria-label="Search" placeholder="⌕  Search"/><small>TASKS</small><nav><span>↗ Upcoming</span><b>☰ Today</b><span>▣ Calendar</span><span>▤ Sticky Wall</span></nav><div className="bottom"><span>Settings</span><span>Sign out</span></div></aside>}

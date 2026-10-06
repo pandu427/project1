@@ -1,0 +1,109 @@
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;color:#222;background:#fff}button,input,textarea{font:inherit}.app{min-height:100vh;display:grid;grid-template-columns:230px minmax(320px,1fr) 320px;gap:24px;padding:32px;max-width:1200px;margin:auto}.sidebar,.editor{background:#eee;border-radius:10px;padding:20px}.sidebar{display:flex;flex-direction:column;min-height:650px}.sidebar input{border:0;background:#fff;padding:9px;margin:12px 0 22px}.sidebar small{font-weight:700;color:#777}.sidebar nav{display:grid;gap:16px;margin-top:12px}.bottom{margin-top:auto;display:grid;gap:14px}.list{padding:0 10px}.list h1{font-size:42px;margin:0 0 25px}.add{width:100%;text-align:left;border:0;padding:13px;background:#f3f3f3;cursor:pointer}.row{display:grid;grid-template-columns:28px 1fr 30px;align-items:center;border-bottom:1px solid #ddd;min-height:46px}.task,.arrow{border:0;background:none;text-align:left;cursor:pointer}.arrow{font-size:24px}.done{text-decoration:line-through;color:#777}.empty{color:#777;padding:25px 0}.editor{display:flex;flex-direction:column;min-height:650px}.editor input,.editor textarea{border:0;background:transparent;border-bottom:1px solid #ccc;padding:10px 0}.editor textarea{height:180px;resize:vertical;margin-top:10px}.actions{display:flex;gap:12px;margin-top:auto}.actions button{flex:1;padding:12px;border-radius:5px;cursor:pointer}.delete{border:1px solid #ddd;color:#d33;background:#fff}.save{border:0;background:#f2c500;font-weight:700}.error{color:#c00;font-size:14px}@media(max-width:800px){.app{grid-template-columns:1fr;padding:16px}.sidebar{min-height:auto}.bottom{margin-top:30px}.editor{min-height:360px}.list h1{font-size:34px}}
+/* =========================
+   Add Task Section
+========================= */
+
+.add-task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin: 16px 0 24px;
+}
+
+/* Input */
+
+.add-task input {
+  flex: 1;
+  height: 44px;
+  padding: 0 14px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #111827;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-task input::placeholder {
+  color: #9ca3af;
+}
+
+.add-task input:hover {
+  border-color: #9ca3af;
+}
+
+.add-task input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Add Button */
+
+.add-task .add {
+  height: 44px;
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+.add-task .add:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.add-task .add:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.add-task .add:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Empty State
+========================= */
+
+.empty {
+  padding: 30px 0;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 500px) {
+  .add-task {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-task .add {
+    width: 100%;
+  }
+}

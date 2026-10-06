@@ -1,0 +1,2 @@
+import { Sidebar } from './components/Sidebar';import { TaskList } from './components/TaskList';import { TaskEditor } from './components/TaskEditor';import { useTodos } from './hooks/useTodos';import './styles.css';
+export default function App(){const t=useTodos();return <div className="app"><Sidebar/><TaskList todos={t.todos} onAdd={t.add} onSelect={t.setSelectedId} onToggle={(id,done)=>t.update(id,{done})}/><TaskEditor todo={t.selected} onSave={(id,p)=>t.update(id,p)} onDelete={t.remove}/></div>}
